@@ -1,0 +1,79 @@
+<html>
+
+<!--    
+    Tasks List:             Updating openGraph URL once project in Netlify
+    Future Improvements:    Other types of conversions / measurements???
+                            Add header and footer into theme adjustments?
+    Icon Source:            https://feathericons.com/?query=light
+    Color Names:            https://colornamer.robertcooper.me/
+-->
+
+<head>
+    <!-- External Styling -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Meta Data -->
+    <title>Fast Online Unit Converter - Metric & Imperial for Length, Weight, Volume</title>
+    <meta name="description"
+        content="Quickly convert units with our free online tool. Convert metric and imperial units for length, weight, and volume with ease. Accurate, easy-to-use, and perfect for everyday calculations.">
+    <meta name="keywords" content="metric to imperial converter," "unit conversion tool,"
+        or "convert length and weight units online.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Fast Online Unit Converter - Metric & Imperial for Length, Weight, Volume">
+    <meta property="og:description"
+        content="Quickly convert units with our free online tool. Convert metric and imperial units for length, weight, and volume with ease. Accurate, easy-to-use, and perfect for everyday calculations.">
+    <meta property="og:image" content="/image/unit-converter.png">
+    <meta property="og:url" content="https://www.example.com"> <!-- Update with your website URL -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Unit Converter">
+</head>
+
+<body>
+    <header>
+        <!-- Main title, input field for values and convert button -->
+        <h1><span>Metric/Imperial</span>&nbsp;<span>Unit Conversion</span></h1>
+        <label for="input-el" class="visually-hidden">Enter value for conversion</label>
+        <input id="input-el" type="text" aria-label="Value for conversion">
+        <p id="input-error" class="visually-hidden">Please enter a valid positive number.</p>
+        <button id="btn-convert">Convert</button aria-label="Submit value for conversions">
+    </header>
+    <main>
+        <!-- A section for displaying length conversions -->
+        <section id="length-section" class="conversion-section">
+            <h2>Length (Meter/Feet)</h2>
+            <p class="convert-results" id="results-length" aria-live="polite">
+                <span>?? meters = ?? feet |</span>&nbsp;<span>?? feet = ?? meters</span>
+            </p>
+        </section>
+        <!-- A section for displaying volume conversions -->
+        <section id="volume-section" class="conversion-section">
+            <h2>Volume (Liters/Gallons)</h2>
+            <p class="convert-results" id="results-volume" aria-live="polite">
+                <span>?? liters = ?? gallons |</span>&nbsp;<span>?? gallons = ?? liters</span>
+            </p>
+        </section>
+        <!-- A section for displaying mass conversions -->
+        <section id="mass-section" class="conversion-section">
+            <h2>Mass (Kilograms/Pounds)</h2>
+            <p class="convert-results" id="results-mass" aria-live="polite">
+                <span>?? kilos = ?? pounds |</span>&nbsp;<span>?? pounds = ?? kilos</span>
+            </p>
+        </section>
+    </main>
+    <footer>
+        <!-- A clickable icon in the footer for changing color and font themes -->
+        <img id="btn-theme" src="/image/dark-mode.svg" tabindex="0" aria-live="polite" alt="Rotate Page Theme">
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

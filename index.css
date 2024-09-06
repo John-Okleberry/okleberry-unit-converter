@@ -1,0 +1,246 @@
+/**************************** 
+***** COLORS & THEMES *******
+****************************/
+
+/* Unchanging Colors on the page:
+    
+    1. Main Header
+    2. Border of input field
+    3. Text color of Button
+    4. Background color of button
+    5. Border color of button
+    6. Header background and footer (Pink-OCD / #6943FF)
+*/
+
+/* Theme variables Defaults to Dark Theme */
+:root {
+    --Results-Container: #1F2937;
+    /* Midnight Express - Located in the Body */
+    --Result-Section: #273549;
+    /* Willow-Blue - The section containing each type of conversion */
+    --Result-Conversion: #FFFFFF;
+    /* White - The p showing converted numbers */
+    --Result-Section-Label: #CCC1FF;
+    /* Lavender-Tonic - The h2 in each conversion type*/
+}
+
+/* Light Theme Variables */
+.light-mode {
+    --Results-Container: #E8E8E8;
+    /* Unicorn Silver */
+    --Result-Section: #FFFFFF;
+    /* White */
+    --Result-Conversion: #2B2B2B;
+    /* Shoe Wax */
+    --Result-Section-Label: #3B3B7E;
+    /* Jacksons Purple */
+    font-family: Inter, sans-serif;
+}
+
+/* Blue Theme */
+.blue-mode {
+    --Results-Container: #A2CFE8;
+    /* Light Periwinkle */
+    --Result-Section: #A4E3F4;
+    /* Blizzard Blue */
+    --Result-Conversion: #1C3D78;
+    /* Deep Navy Blue */
+    --Result-Section-Label: #005A91;
+    /* Bright Steel Blue */
+    font-family: 'Lucida Console', Monaco, monospace;
+}
+
+/* Green Theme */
+.green-mode {
+    --Results-Container: #D3F9D8;
+    /* Light Green */
+    --Result-Section: #A8D5BA;
+    /* Light Moss Green */
+    --Result-Conversion: #004d00;
+    /* Dark Green */
+    --Result-Section-Label: #6B8E23;
+    /* Olive Drab */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+
+/**************************** 
+** OVERALL PAGE FORMATTING **
+****************************/
+
+/* Root font size for rem units (1rem = 16px) */
+html {
+    font-size: 16px;
+}
+
+/* Formatting for the page as a whole */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    line-height: 1.5;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    background: var(--Results-Container);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* CSS Reset to normalize sizing and spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS for visually hidden labels  */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+
+
+/************************ 
+** KEYBOARD ONLY USERS **
+************************/
+
+
+button, input, #btn-theme {
+    outline: none; /* Remove default focus outline */
+}
+
+/* Displaying an outline when interactive elements are in focus - hover with mouse included */
+button:focus, input:focus, #btn-theme:focus, button:hover, input:hover {
+    outline: 2px solid var(--Result-Section-Label);
+    outline-offset: 4px;
+}
+
+
+
+/************************ 
+*** HEADER FORMATTING ***
+************************/
+
+/* The container for the main heading, input field, and convert button */
+header {
+    background-color: #6943FF;
+    margin: 0;
+    padding: 0.5rem;
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* The main page heading */
+h1 {
+    font-family: Inter, sans-serif;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin-bottom: 0.25rem;
+    font-size: clamp(1.2rem, 3vw + 1rem, 10.0rem);
+}
+
+/* The spans - Makes the transition between 1 and 2 rows smoother */
+h1 span, p span {
+    white-space: nowrap;
+    display: inline-block;
+}
+
+/* The text field for value entries */
+#input-el {
+    width: 40%;
+    max-width: 250px;
+    height: 2.75rem;
+    background: #6943FF;
+    border: 2px gray solid;
+    border-radius: 0.1875rem;
+    color: #FFFFFF;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+/* The button to submit the entered value for conversion */
+#btn-convert {
+    color: black;
+    border: none;
+    background: #FFFFFF;
+    border-radius: 0.3125rem;
+    margin: 0.625rem;
+    padding: 0.5rem 1.25rem;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    height: auto;
+    font-size: clamp(0.7rem, 3vw + 0.4rem, 3.0rem);
+    width: 40%;
+    max-width: 250px;
+}
+
+
+
+/************************ 
+**** MAIN FORMATTING ****
+************************/
+
+/* Conversion Sections - Container holding all conversions */
+main {
+    margin: 0;
+    padding: 0.625;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+/* Conversion Sections - Container Holding Each Conversion Type */
+.conversion-section {
+    background: var(--Result-Section);
+    margin: 0.625rem;
+    padding: 0.313rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Conversion Sections - Heading for each conversion type */
+h2 {
+    color: var(--Result-Section-Label);
+    font-size: clamp(0.8rem, 2vw + 0.7rem, 3.0rem);
+}
+
+/* Conversion Sections - Calculation results Text */
+.convert-results {
+    color: var(--Result-Conversion);
+    font-size: clamp(0.5rem, 2vw + 0.3rem, 2.5rem);
+}
+
+
+
+/************************ 
+*** FOOTER FORMATTING ***
+************************/
+
+/* The footer where the theme toggle is present */
+footer {
+    background-color: #6943FF;
+}
+
+/* A clickable icon that toggles the color scheme between 4 options (dark, light, green, blue) */
+#btn-theme {
+    margin-top: 0.313rem;
+    height: auto;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 10%;
+    max-width: 50px;
+}
